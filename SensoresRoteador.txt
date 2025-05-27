@@ -1,0 +1,15 @@
+ena
+conf t
+hostname sensores
+enable password cisco
+int g0/0
+ip address 196.168.45.31 255.255.255.224
+no shut
+int s0/3/1
+ip address 196.168.45.62 255.255.255.224
+no shut
+router rip
+version 2
+network 196.168.45.31
+network 196.168.45.62
+no auto-summary
